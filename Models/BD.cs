@@ -15,7 +15,7 @@ public static class BD
        return UsuarioEncontrado;
     }
 
-    public static void AgregarUsuario(Usuario Usua)
+    public static void AgregarUsuario(string Username, string Contraseña, int Telefono, string Gmail, int Edad)
     {
         string SQL = "INSERT INTO Jugadores(UserName, Contraseña, Telefono, Gmail, Edad) VALUES (@PUserName, @pContraseña, @pTelefono, @pGmail, @pEdad)";
         using(SqlConnection db = new SqlConnection(_connectionString))
