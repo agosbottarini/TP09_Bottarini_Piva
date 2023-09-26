@@ -20,3 +20,45 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.container {
+  
+  position: relative;
+
+}
+
+.center-element
+{
+  position: absolute;
+  margin-top: 20%;
+  left: 37%;
+}
+
+.header{
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  height: 377px;
+  width: 350px;
+  letter-spacing: 2px;
+  box-shadow: 2px 2px rgba(167, 167, 167, 0.06);
+}
+
+h1 {
+  height: 51px;
+  width: 175px;
+  font-family: 'Cookie', cursive;
+  font-size: 55px;
+  position: relative;
+  left: 40px;
+  top: 30px;
+  color: #393939;
+}
+
+.login {
+  background-color: #fff;
+  width: 348px;
+  height: 261px;
+  position: relative;
+  top: 60px;
+}
