@@ -28,4 +28,28 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+    public IActionResult AgregarUsuario(string Username, string Contraseña, int Telefono, string Gmail, int Edad)
+    {
+        BD.AgregarUsuario(Username, Contraseña, Telefono, Gmail, Edad)
+
+        return View("Index");
+    }
+
+    public IActionResult CambiarContraseña(string Contraseña,string Username)
+    {
+        BD.CambiarContraseña(Contraseña, UserName);
+        return View("Index");
+    }
+
+    public IActionResult VerificarUsuario(string Contraseña, string Username)
+    {
+        if(BD.ObtenerUsuario(UserName, Contraseña) == NULL)
+        {
+            ViewBag.Error = "Usuario o Contraseña Incorrecta";
+            return View("Index");
+        }
+        return View("Bienvenida")
+    }
+    
 }
