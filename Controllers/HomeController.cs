@@ -63,9 +63,9 @@ public class HomeController : Controller
         return View("Index");
     }
 
-    public IActionResult CambiarContraseña(string Contraseña,string UserName)
+    public IActionResult ObtenerContraseña(int Telefono)
     {
-        BD.CambiarContraseña(Contraseña, UserName);
+        ViewBag.Contraseña = BD.ObtenerContraseña(Telefono);
         return View("Index");
     }
 
