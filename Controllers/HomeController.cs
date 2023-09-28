@@ -51,8 +51,15 @@ public class HomeController : Controller
 
     public IActionResult AgregarUsuario(string Username, string Contraseña, int Telefono, string Gmail, int Edad)
     {
-        BD.AgregarUsuario(Username, Contraseña, Telefono, Gmail, Edad);
-
+        if(BD.ObtenerUsuario(Username, Contraseña) == null)
+        {
+            BD.AgregarUsuario(Username, Contraseña, Telefono, Gmail, Edad);
+        }
+        else
+        {
+            ViewBag.NoEncontrado = "Ese Usuario ya existe";
+        }
+        
         return View("Index");
     }
 
@@ -64,7 +71,7 @@ public class HomeController : Controller
 
     public IActionResult VerificarUsuario(string Contraseña, string UserName)
     {
-        if(BD.ObtenerUsuario(UserName, Contraseña) ==null)
+        if(BD.ObtenerUsuario(UserName, Contraseña) == null)
         {
             ViewBag.Error = "Usuario o Contraseña Incorrecta";
             return View("Index");
