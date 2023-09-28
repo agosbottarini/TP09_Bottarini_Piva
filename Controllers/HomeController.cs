@@ -66,7 +66,7 @@ public class HomeController : Controller
     public IActionResult ObtenerContraseña(int Telefono)
     {
         ViewBag.Contraseña = BD.ObtenerContraseña(Telefono);
-        return View("Index");
+        return View("Olvide");
     }
 
     public IActionResult VerificarUsuario(string Contraseña, string UserName)
