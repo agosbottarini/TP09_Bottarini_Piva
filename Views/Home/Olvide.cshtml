@@ -1,17 +1,17 @@
 
-<form id="change-password-form" action="/lo/reset" method="post">
+<form id="change-password-form" action='@Url.Action("Index", "Home")' method="post">
 
 <div class="form-group">
-              <label for="newPassword">Password</label>
+              <label for="recuperar">Ingrese su telefono</label>
               <input type="password" id="newPassword" name="newPassword" class="form-control">
             </div>
             <div class="form-group">
-              <label>Confirm Password</label>
+              <label>Confirme el telefono</label>
               <br />
               <input type="password" id="confirmNewPassword" name="confirmNewPassword" class="form-control">
             </div>
             <br />
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Recuperar</button>
           </form>
         </div>
       </div>
