@@ -2,7 +2,8 @@ using System.Data.SqlClient;
 using Dapper;
 public static class BD
 {
-    public static string _connectionString = @"localost";
+    public static string _connectionString = @"Server=localhost;
+    DataBase=TP9_Bottarini_Piva;Trusted_Connection=True";
 
     public static Usuario ObtenerUsuario(string username, string contraseña)
     {
@@ -15,9 +16,9 @@ public static class BD
        return UsuarioEncontrado;
     }
 
-    public static void AgregarUsuario(string UserName, string Contraseña, int Telefono, string Gmail, int Edad)
+    public static void AgregarUsuario(string UserName, string Contraseña, int Telefono, string Gmail, DateTime Edad)
     {
-        string SQL = "INSERT INTO Jugadores(UserName, Contraseña, Telefono, Gmail, Edad) VALUES (@PUserName, @pContraseña, @pTelefono, @pGmail, @pEdad)";
+        string SQL = "INSERT INTO Usuario(UserName, Contraseña, Telefono, Gmail, Edad) VALUES (@PUserName, @pContraseña, @pTelefono, @pGmail, @pEdad)";
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             db.Execute(SQL, new {pUsername = UserName, pContraseña = Contraseña, pTelefono = Telefono, pGmail = Gmail, pEdad = Edad});

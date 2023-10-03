@@ -49,7 +49,7 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-    public IActionResult AgregarUsuario(string Username, string Contraseña, int Telefono, string Gmail, int Edad)
+    public IActionResult AgregarUsuario(string Username, string Contraseña, int Telefono, string Gmail, DateTime Edad)
     {
         if(BD.ObtenerUsuario(Username, Contraseña) == null)
         {

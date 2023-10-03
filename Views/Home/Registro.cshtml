@@ -20,53 +20,72 @@
 
 
 
-            <form class="mb-3" style="margin-top: 10%" action = '@Url.Action("Index", "Home")'>
+            <form class="mb-3" style="margin-top: 10%" action = '@Url.Action("AgregarUsuario", "Home")' method="post">
               <div class="row">
                 <div class="form-group col-12 col-sm-6" style="justify-content: center;">
-                  <label for="username">Usuario:</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Usuario"
-                    id="username"
-                  />
-              </div>
-              <div class="form-group">
-                <label for="email">Email:</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="example@example.com"
-                  id="email"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="password">Password:</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  required
-                />
-              </div>
-              <label>Cumpleanios:</label>
-              <div class="row no-gutters">
-                <div class="form-group">
-                  <input type="date" class="form-control" value="2023-06-01" />
+                      <label for="username">Usuario:</label>
+                      <input
+                        type="text"
+                        name="UserName"
+                        class="form-control"
+                        placeholder="Usuario"
+                        id="username"
+                      />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input
+                      type="email"
+                      name="Gmail"
+                      class="form-control"
+                      placeholder="example@example.com"
+                      id="email"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input
+                      type="password"
+                      name="Contraseña"
+                      class="form-control"
+                      id="password"
+                      required
+                    />
+                  </div>
+                  <label>Cumpleanios:</label>
+                  <div class="row no-gutters">
+                    <div class="form-group">
+                      <input 
+                      type="date" 
+                      name="Edad"
+                      class="form-control"
+                      value="2023-06-01" />
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Telefono:</label>
+                    <input
+                      type="tel"
+                      name="Telefono"
+                      class="form-control"
+                      placeholder="1156789687"
+                      id="telefono"
+                      required
+                    />
+                </div>
               </div>
               
-              <button type="submit" class="btn btn-primary btn-block mb-3"> Crear cuenta </button>
+                  <button type="submit" class="btn btn-primary btn-block mb-3"> Crear cuenta </button>
 
-              <div class="alert alert-info small" role="alert">
-                Al crear una cuenta estas aceptando nuestros
-                <a href='@Url.Action("Terminos", "Home")' class="alert-link" target="_blank">Terminos &amp; y Condiciones</a> y
-                nuestra <a href='@Url.Action("Privacy", "Home")' class="alert-link" target="_blank"> Politica de Privacidad</a>.
-              </div>
-              <div class="text-center">
-                <p>Ya tienes una cuenta?...</p>
-                <a href='@Url.Action("Index", "Home")' class="btn btn-success">Login</a>
-              </div>
+                  <div class="alert alert-info small" role="alert">
+                    Al crear una cuenta estas aceptando nuestros
+                    <a href='@Url.Action("Terminos", "Home")' class="alert-link" target="_blank">Terminos &amp; y Condiciones</a> y
+                    nuestra <a href='@Url.Action("Privacy", "Home")' class="alert-link" target="_blank"> Politica de Privacidad</a>.
+                  </div>
+                  <div class="text-center">
+                    <p>Ya tienes una cuenta?...</p>
+                    <a href='@Url.Action("Index", "Home")' class="btn btn-success">Login</a>
+                  </div>
             </form>
           </div>
         </div>

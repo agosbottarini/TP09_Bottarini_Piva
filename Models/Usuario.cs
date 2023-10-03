@@ -5,14 +5,14 @@ public class Usuario
     public string Contraseña{get;set;}
     public int Telefono{set;get;}
     public string Gmail{set;get;}
-    public int Edad{set;get;}
+    public DateTime Edad{set;get;}
 
     public Usuario()
     {
 
     }
 
-    public Usuario(string username, string contraseña, int telefono, string gmail, int edad)
+    public Usuario(string username, string contraseña, int telefono, string gmail, DateTime edad)
     {
         UserName = username;
         Contraseña = contraseña;
