@@ -65,7 +65,17 @@ public class HomeController : Controller
 
     public IActionResult ObtenerContraseña(int Telefono)
     {
-        ViewBag.Contraseña = BD.ObtenerContraseña(Telefono);
+        if(BD.ObtenerContraseña(Telefono) == null)
+        {
+            ViewBag.Contraseña = "Telefono incorrecto";
+        }
+        else
+        {
+            
+            
+            ViewBag.Contraseña = "Su contraseña es " + BD.ObtenerContraseña(Telefono);
+        }
+        
         return View("Olvide");
     }
 
