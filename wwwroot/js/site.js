@@ -1,4 +1,29 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function ConfirmarRegistro()
+{
+    const contraseña = document.getElementById("Contraseña").value;
+    const caracteres = '!"#$%&/()=,.-{}´+;:_[]*'
+    caracterencontrado == false;
+    caractermayus == false;
 
-// Write your JavaScript code.
+    while(contraseña.length < 8 || caracterencontrado == false || caractermayus == false)
+    {
+        if(contraseña[a] === contraseña[a].ToLowerCase())
+            {
+                 caractermayus == true;   
+            }
+        for(i = 0; i<contraseña.length; i++)
+        {
+            for(a = 0; a<caracteres.length; a++)
+            {
+                if(contraseña[i] == caracteres[a])
+                {
+                    caracterencontrado == true;
+                }
+            }
+            
+                   
+        }
+    }
+
+    
+}
