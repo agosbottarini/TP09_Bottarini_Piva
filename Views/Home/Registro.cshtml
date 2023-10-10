@@ -1,4 +1,5 @@
 
+
     <title>Crear una cuenta</title>
 
 
@@ -49,9 +50,15 @@
                       type="password"
                       name="Contraseña"
                       class="form-control"
+                      onkeyup="ConfirmarRegistro()" 
                       id="password"
                       required
                     />
+                    <div class="alert alert-info" role="alert" style="padding:.25rem .75rem;margin-top:5px;">
+                        <span style="color: red;" id="mensajeA"> La contreña debe contener al menos 8 caracteres</span><br>
+                        <span style="color: red;" id="mensajeB"> La contreña debe contener al menos una mayuscula</span><br>
+                        <span style="color: red;" id="mensajeC"> La contreña debe contener al menos un caracter especial</span>
+                    </div>
                   </div>
                   <label>Cumpleanios:</label>
                   <div class="row no-gutters">
@@ -92,44 +99,3 @@
       </div>
     </div>
 
-<script>
-  function ValidarContraseña()
-  {
-    const contraseña = document.GetElementById("Contraseña").vale;
-    const caracteres = '!#$%&/()=?¡*.-_;:'
-    let caracter = false,mayus = false;
-    let i = 0;
-    let o = 0;
-    if(contraseña.lenght >= 8)
-    {
-      while(i<contraseña.lenght && caracter = false)
-      {
-        while(o<caracteres.lenght && caracter = false)
-        {
-          if(contraseña[i] == caracteres[o])
-          {
-            caracter = true;
-          }
-          o++;
-        }
-      o=0 ++
-      i++;
-    }
-  }
-  if(caracter == true)
-  {
-    i = 0 
-    while(i<contraseña.lenght && mayus == false)
-    {
-      if(contraseña[i] == contraseña[i].toUpperCase())
-      {
-        mayus = true;
-      }
-      i++;
-    }
-  }  
-
-  return (mayus == true)
-}
-
-</script>

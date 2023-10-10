@@ -69,14 +69,14 @@ public class HomeController : Controller
     {
         if(BD.ObtenerContraseña(Telefono) == null)
         {
-            ViewBag.Contraseña = "Telefono Incorrecto";
+            ViewBag.Contraseña = "Telefono incorrecto";
         }
         else
         {
+            
             ViewBag.Contraseña = "Su contraseña es " + BD.ObtenerContraseña(Telefono);
         }
         
-
         return View("Olvide");
     }
 
@@ -87,6 +87,7 @@ public class HomeController : Controller
             ViewBag.Error = "Usuario o Contraseña Incorrecta";
             return View("Index");
         }
+        ViewBag.Usuario = BD.ObtenerUsuario(UserName, Contraseña);
         return View("Bienvenida");
     }
     

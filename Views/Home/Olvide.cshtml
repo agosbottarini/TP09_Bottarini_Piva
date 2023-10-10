@@ -29,6 +29,7 @@
                   class="form-control"
                   id="tel"
                   required
+                  name = "Telefono"
                 />
               </div>
               <div class="form-group">
@@ -39,17 +40,16 @@
                   class="form-control"
                   id="tel"
                   required
+                  name = "Telefono"
                 />
               </div>
 
               <div style="margin-bottom: 2vw;">@ViewBag.Contraseña</div>
               
 
+              @ViewBag.Contraseña
               <button type="submit" class="btn btn-primary btn-block mb-3"> Recuperar </button>
-              <a href='@Url.Action("Index", "Home")' class="btn btn-primary btn-block mb-3"> Volver </button>
-
-
-    <title>Recu
+              <a href='@Url.Action("Index", "Home")' class="btn btn-primary btn-block mb-3"> Volver </a>
 
             
             </form>
