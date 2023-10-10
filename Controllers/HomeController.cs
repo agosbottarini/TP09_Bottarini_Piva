@@ -54,18 +54,29 @@ public class HomeController : Controller
         if(BD.ObtenerUsuario(Username, Contraseña) == null)
         {
             BD.AgregarUsuario(Username, Contraseña, Telefono, Gmail, Edad);
+            return View("Index");
         }
         else
         {
             ViewBag.NoEncontrado = "Ese Usuario ya existe";
+            return View("Registro");
         }
         
-        return View("Index");
+        
     }
 
     public IActionResult ObtenerContraseña(int Telefono)
     {
-        ViewBag.Contraseña = BD.ObtenerContraseña(Telefono);
+        if(BD.ObtenerContraseña(Telefono) == null)
+        {
+            ViewBag.Contraseña = "Telefono Incorrecto";
+        }
+        else
+        {
+            ViewBag.Contraseña = "Su contraseña es " + BD.ObtenerContraseña(Telefono);
+        }
+        
+
         return View("Olvide");
     }
 

@@ -20,7 +20,7 @@
 
 
 
-            <form class="mb-3" style="margin-top: 10%" action = '@Url.Action("AgregarUsuario", "Home")' method="post">
+            <form class="mb-3" style="margin-top: 10%" action = '@Url.Action("AgregarUsuario", "Home")' method="post" onsubmit="return ValidarContraseña()">
               <div class="row">
                 <div class="form-group col-12 col-sm-6" style="justify-content: center;">
                       <label for="username">Usuario:</label>
@@ -91,3 +91,45 @@
         </div>
       </div>
     </div>
+
+<script>
+  function ValidarContraseña()
+  {
+    const contraseña = document.GetElementById("Contraseña").vale;
+    const caracteres = '!#$%&/()=?¡*.-_;:'
+    let caracter = false,mayus = false;
+    let i = 0;
+    let o = 0;
+    if(contraseña.lenght >= 8)
+    {
+      while(i<contraseña.lenght && caracter = false)
+      {
+        while(o<caracteres.lenght && caracter = false)
+        {
+          if(contraseña[i] == caracteres[o])
+          {
+            caracter = true;
+          }
+          o++;
+        }
+      o=0 ++
+      i++;
+    }
+  }
+  if(caracter == true)
+  {
+    i = 0 
+    while(i<contraseña.lenght && mayus == false)
+    {
+      if(contraseña[i] == contraseña[i].toUpperCase())
+      {
+        mayus = true;
+      }
+      i++;
+    }
+  }  
+
+  return (mayus == true)
+}
+
+</script>

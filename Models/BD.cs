@@ -10,7 +10,7 @@ public static class BD
        Usuario UsuarioEncontrado = null;
        using(SqlConnection db = new SqlConnection(_connectionString))
        {
-            string sql = "SELECT * FROM Usuario WHERE username = @pUsername AND contraseña = @pContraseña";
+            string sql = "SELECT * FROM Usuario WHERE username = @pUsername OR contraseña = @pContraseña";
             UsuarioEncontrado = db.QueryFirstOrDefault<Usuario>(sql, new {pUsername = username, PContraseña = contraseña});
        }
        return UsuarioEncontrado;

@@ -1,5 +1,5 @@
 
-    <title>Recuperar contrasena</title>
+    perar contrasena</title>
 
     <link
       rel="stylesheet"
@@ -25,6 +25,7 @@
                 <label for="tel">Telefono:</label>
                 <input
                   type="tel"
+                  name="Telefono"
                   class="form-control"
                   id="tel"
                   required
@@ -34,14 +35,21 @@
                 <label for="tel">Confirmar telefono:</label>
                 <input
                   type="tel"
+                  name="Telefono"
                   class="form-control"
                   id="tel"
                   required
                 />
               </div>
 
+              <div style="margin-bottom: 2vw;">@ViewBag.Contraseña</div>
+              
 
               <button type="submit" class="btn btn-primary btn-block mb-3"> Recuperar </button>
+              <a href='@Url.Action("Index", "Home")' class="btn btn-primary btn-block mb-3"> Volver </button>
+
+
+    <title>Recu
 
             
             </form>
